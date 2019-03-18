@@ -13,7 +13,7 @@
 ### Réponse
 ```json
 {
-	"idCOurse" : "integer",
+	"idCourse" : "integer",
 	"idReservationInterneTransporteur" : "string",
 	"pointDepart" : "string [A-Z]",
 	"pointArrivee" : "string [A-Z]",
