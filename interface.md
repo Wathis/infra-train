@@ -38,7 +38,7 @@
 ```json
 [
 	{
-		"pointArrivee" : "string [A-Z]",
+		"pointDepart" : "string [A-Z]",
 		"pointArrivee" : "string [A-Z]",
 		"tempsDebut" : "timestamp",
 		"tempsFin" : "timestamp"
