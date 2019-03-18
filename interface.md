@@ -1,6 +1,6 @@
 # Reservation 
 
-```
+```json
 Reservation
 {
     "idTransporteur" : "",
@@ -12,7 +12,7 @@ Reservation
 }
 ```
 
-```
+```json
 Course
 {
 	"idCourse" : "",
@@ -27,7 +27,7 @@ Course
 
 # Travaux 
 
-```
+```json
 travaux
 {
 	"idCourse" : "",
