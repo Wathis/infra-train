@@ -1,5 +1,5 @@
 # Interface sender-consumer
-## Reservation (read & write)
+## Reservation
 ### Request
 ```json
 {
@@ -23,7 +23,7 @@
 }
 ```
 
-## Maintenance (read)
+## Maintenance (read only)
 ### Ride cancellation
 ```json
 {
