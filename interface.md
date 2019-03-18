@@ -1,41 +1,38 @@
-# Reservation 
-
+# Réservation
+## Requête
 ```json
-Reservation
 {
-    "idTransporteur" : "",
-    "idResa" : "",
-    "from" : A-Z,
-    "to" : A-Z,
-    "deparatureTime" : timestamp,
-    "delta" : int // minutes
+	"carrierId" : "string",
+	"carrierReservationId" : "string",
+	"from" : "string [A-Z]",
+	"to" : "string [A-Z]",
+	"deparatureTime" : "timestamp",
+	"delta" : "integer"
 }
 ```
 
+## Réponse
 ```json
-Course
 {
-	"idCourse" : "",
-	"idResa" : "",
-	"departureTime" : timestamp,
-	"from" : A-Z,
-	"to" : A-Z,
-	"response" : "validé" | "refusé : déjà reservé"
+	"rideId" : "integer",
+	"carrierId" : "string",
+	"carrierReservationId" : "string",
+	"from" : "string [A-Z]",
+	"to" : "string [A-Z]",
+	"departureTime" : "timestamp",
+	"error" : "boolean",
+	"message" : "string"
 }
 ```
 
 
 # Travaux 
-
 ```json
-travaux
 {
-	"idCourse" : "",
-	"idResa" : "",
-	"departureTime" : timestamp,
-	"from" : A-Z,
-	"to" : A-Z,
-	"workBeginTime" : timestamp,
-	"workEndTime" : timestamp
+	"rideId" : "integer",
+    	"carrierId" : "string",
+	"carrierReservationId" : "string",
+	"workBeginTime" : "timestamp",
+	"workEndTime" : "timestamp"
 }
 ```
