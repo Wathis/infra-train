@@ -3,22 +3,22 @@
 ### Requête
 ```json
 {
-	"carrierInternalReservationId" : "string",
-	"from" : "string [A-Z]",
-	"to" : "string [A-Z]",
-	"deparatureTime" : "timestamp"
+	"idReservationInterneTransporteur" : "string",
+	"pointDepart" : "string [A-Z]",
+	"pointArrivee" : "string [A-Z]",
+	"tempsDepart" : "timestamp"
 }
 ```
 
 ### Réponse
 ```json
 {
-	"rideId" : "integer",
-	"carrierInternalReservationId" : "string",
-	"from" : "string [A-Z]",
-	"to" : "string [A-Z]",
-	"departureTime" : "timestamp",
-	"error" : "boolean",
+	"idCOurse" : "integer",
+	"idReservationInterneTransporteur" : "string",
+	"pointDepart" : "string [A-Z]",
+	"pointArrivee" : "string [A-Z]",
+	"tempsDepart" : "timestamp",
+	"erreur" : "boolean",
 	"message" : "string"
 }
 ```
@@ -27,10 +27,10 @@
 ### Annulation de course
 ```json
 {
-	"rideId" : "integer",
-	"carrierInternalReservationId" : "string",
-	"startTime" : "timestamp",
-	"endTime" : "timestamp"
+	"idCourse" : "integer",
+	"idReservationInterneTransporteur" : "string",
+	"tempsDebut" : "timestamp",
+	"tempsFin" : "timestamp"
 }
 ```
 
@@ -38,10 +38,10 @@
 ```json
 [
 	{
-		"from" : "string [A-Z]",
-		"to" : "string [A-Z]",
-		"startTime" : "timestamp",
-		"endTime" : "timestamp"
+		"pointArrivee" : "string [A-Z]",
+		"pointArrivee" : "string [A-Z]",
+		"tempsDebut" : "timestamp",
+		"tempsFin" : "timestamp"
 	}
 ]
 ```
