@@ -1,22 +1,20 @@
-# Réservation
-## Requête
+# Interface sender-consumer
+## Reservation (read & write)
+### Request
 ```json
 {
-	"carrierId" : "string",
-	"carrierReservationId" : "string",
+	"carrierInternalReservationId" : "string",
 	"from" : "string [A-Z]",
 	"to" : "string [A-Z]",
-	"deparatureTime" : "timestamp",
-	"delta" : "integer"
+	"deparatureTime" : "timestamp"
 }
 ```
 
-## Réponse
+### Response
 ```json
 {
 	"rideId" : "integer",
-	"carrierId" : "string",
-	"carrierReservationId" : "string",
+	"carrierInternalReservationId" : "string",
 	"from" : "string [A-Z]",
 	"to" : "string [A-Z]",
 	"departureTime" : "timestamp",
@@ -25,14 +23,25 @@
 }
 ```
 
-
-# Travaux 
+## Maintenance (read)
+### Ride cancellation
 ```json
 {
 	"rideId" : "integer",
-    	"carrierId" : "string",
-	"carrierReservationId" : "string",
-	"workBeginTime" : "timestamp",
-	"workEndTime" : "timestamp"
+	"carrierInternalReservationId" : "string",
+	"startTime" : "timestamp",
+	"endTime" : "timestamp"
 }
+```
+
+### List ongoing maintenance operations
+```json
+[
+	{
+		"from" : "string [A-Z]",
+		"to" : "string [A-Z]",
+		"startTime" : "timestamp",
+		"endTime" : "timestamp"
+	}
+]
 ```
