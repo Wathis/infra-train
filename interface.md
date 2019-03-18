@@ -1,8 +1,7 @@
 # Reservation 
 
-/reservation
 ```
-POST
+RESERVATION
 {
     id_transporteur : "",
     id_resa : "",
@@ -13,6 +12,4 @@ POST
 }
 ```
 
-
 # Travaux 
-

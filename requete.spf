@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>infra</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>-3985659270009439629</string>
+			<key>name</key>
+			<string>127.0.0.1</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDE2VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJpZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vMFhOU1N0cmluZ1hOU09iamVjdNIeHzIz
+			Xk5TTXV0YWJsZUFycmF5ozI0NVdOU0FycmF5WE5TT2JqZWN00h4f
+			IjeiIjhYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLROzxUZGF0
+			YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBlAGwAcAByAHQAdgB6
+			AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA1QDeAPQA+AEFAQ4B
+			EwEVARcBGQEeASgBKgEtATIBRAFIAVEBWgFfAW4BcgF6AYMBiAGL
+			AZQBpgGpAa4AAAAAAAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB
+			sA==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1226, 674}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>select count(*) = 0 as sillon_disponible from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925280 + 1200 and res.timestamp &gt; 1552925280 - 1200 and sil.id = 1;
+
+
+select distinct sil.id,position from desserte join ligne lig join sillon sil on sil.ligne_id = lig.id where nom = "A" or nom = "B"; </string>
+			<key>table</key>
+			<string>ligne</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>select distinct sil.id,position from desserte join ligne lig join sillon sil on sil.ligne_id = lig.id where nom = "A" or nom = "B"</string>
+		<string>select distinct sil.id from desserte join ligne lig join sillon sil on sil.ligne_id = lig.id where nom = "A" or nom = "B"</string>
+		<string>select sil.id from desserte join ligne lig join sillon sil on sil.ligne_id = lig.id where nom = "A" or nom = "B"</string>
+		<string>select * from desserte join ligne lig join sillon sil on sil.ligne_id = lig.id where nom = "A" or nom = "B"</string>
+		<string>select * from desserte join ligne join sillon where nom = "A" or nom = "B"</string>
+		<string>select * from desserte join ligne where nom = "A" or nom = "B"</string>
+		<string>select * from desserte join ligne where nom = "A"</string>
+		<string>select count(*) = 0 as sillon_disponible from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925280 + 1200 and res.timestamp &gt; 1552925280 - 1200 and sil.id = 1</string>
+		<string>select count(*) = 0 as sillon_disponible from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select count(*) = 0 ? true : false as sillon_disponible from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select count(*) &gt; 0 as sillon_disponible from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select count(*) as nb_reservation_sillon from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select count(*) from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt; 1552925940 + 1200 and res.timestamp &gt; 1552925940 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt;= 1552925941 + 1200 and res.timestamp &gt;= 1552925941 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt;= 1552925940 + 1200 and res.timestamp &gt;= 1552925940 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt;= 1552925580 + 1200 and res.timestamp &gt;= 1552925580 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt;= 1552925400 + 1200 and res.timestamp &gt;= 1552925400 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.date &lt;= 1552925400 + 1200 and res.date &gt;= 1552925400 - 1200 and sil.id = 1</string>
+		<string>select * from reservation res join sillon sil on res.sillon_id = sil.id where res.timestamp &lt;= 1552924860 + 1200 and res.timestamp &gt;= 1552924860 - 1200 and sillon_id = 1</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.23</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
