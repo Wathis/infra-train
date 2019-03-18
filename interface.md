@@ -1,6 +1,6 @@
 # Interface sender-consumer
 ## Reservation
-### Request
+### Requête
 ```json
 {
 	"carrierInternalReservationId" : "string",
@@ -10,7 +10,7 @@
 }
 ```
 
-### Response
+### Réponse
 ```json
 {
 	"rideId" : "integer",
@@ -23,8 +23,8 @@
 }
 ```
 
-## Maintenance (read only)
-### Ride cancellation
+## Travaux (read only)
+### Annulation de course
 ```json
 {
 	"rideId" : "integer",
@@ -34,7 +34,7 @@
 }
 ```
 
-### List ongoing maintenance operations
+### Lister les travaux en cours
 ```json
 [
 	{
