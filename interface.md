@@ -1,5 +1,5 @@
 # Interface sender-consumer
-## Reservation
+## Réservation
 ### Requête
 ```json
 {
@@ -24,7 +24,7 @@
 ```
 
 ## Travaux (read only)
-### Annulation de course
+### Notification d'annulation de course
 ```json
 {
 	"idCourse" : "integer",
