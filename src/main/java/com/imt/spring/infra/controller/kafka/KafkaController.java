@@ -1,5 +1,7 @@
 package com.imt.spring.infra.controller.kafka;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.imt.spring.infra.model.Reservation;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,29 +13,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 @RestController
 public class KafkaController {
 
-    public static Logger logger = LoggerFactory.getLogger(KafkaController.class);
-
     @Autowired
     private KafkaTemplate<String, String> template;
 
-    private final CountDownLatch latch = new CountDownLatch(3);
+    private ObjectMapper objectMapper = new ObjectMapper();
 
-    @RequestMapping("/test_kafka/{message}")
-    public String testKafka(@PathVariable("message") String message) {
+
+    @RequestMapping("/test_kafka")
+    public String testKafka() throws IOException, ParseException {
         System.out.println("Test Kafka");
-        this.template.send("test", message);
-        return "Done.";
+        Reservation reservation = new Reservation(0, LocalDateTime.now());
+        objectMapper.registerModule(Reservation.getSerializerModule());
+        String objJSON = objectMapper.writeValueAsString(reservation);
+        this.template.send("reservations", objJSON);
+        return objJSON;
     }
 
-    @KafkaListener(topics = "test")
+    @KafkaListener(topics = "reservations")
     public void listen(ConsumerRecord<?,?> cr) throws Exception {
-        logger.info(cr.toString());
         System.out.println(cr.value());
+        objectMapper.registerModule(Reservation.getDeserializerModule());
+        Reservation reservation = objectMapper.readValue(cr.value().toString(), Reservation.class);
+        System.out.println(reservation);
     }
 }
