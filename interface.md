@@ -8,7 +8,7 @@
 	"idReservationInterneTransporteur" : "string",
 	"pointDepart" : "string [A-Z]",
 	"pointArrivee" : "string [A-Z]",
-	"tempsDepart" : "timestamp"
+	"tempsDepart" : long //timestamp
 }
 ```
 
@@ -16,12 +16,12 @@
 **NOM TOPIC KAFKA** : reponse_reservation
 ```json
 {
-	"idCourse" : "integer",
+	"idCourse" : integer,
 	"idReservationInterneTransporteur" : "string",
 	"pointDepart" : "string [A-Z]",
 	"pointArrivee" : "string [A-Z]",
-	"tempsDepart" : "timestamp",
-	"erreur" : "boolean",
+	"tempsDepart" : long //timestamp,
+	"erreur" : boolean,
 	"message" : "string"
 }
 ```
