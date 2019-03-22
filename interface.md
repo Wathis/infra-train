@@ -20,7 +20,7 @@
 	"idReservationInterneTransporteur" : "string",
 	"pointDepart" : "string [A-Z]",
 	"pointArrivee" : "string [A-Z]",
-	"tempsDepart" : long //timestamp,
+	"tempsDepart" : long, //timestamp
 	"erreur" : boolean,
 	"message" : "string"
 }
