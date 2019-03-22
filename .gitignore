@@ -1,3 +1,4 @@
+
 *.java.hsp
 *.sonarj
 *.sw*
@@ -37,3 +38,7 @@ out
 test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
+derby.log
+infra.iml
+.idea/
+target/
