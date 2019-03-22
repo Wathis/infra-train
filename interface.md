@@ -1,14 +1,9 @@
-
-# Reservation 
-
-```
-RESERVATION
-=======
 # Interface sender-consumer
+
 ## Réservation
 ### Requête
+*NOM TOPIC KAFKA* : creer_reservation
 ```json
->>>>>>> d75beeb7d55302d40a1b14ad6a7af88dda20bdf1
 {
 	"idReservationInterneTransporteur" : "string",
 	"pointDepart" : "string [A-Z]",
@@ -18,6 +13,7 @@ RESERVATION
 ```
 
 ### Réponse
+*NOM TOPIC KAFKA* : reponse_reservation
 ```json
 {
 	"idCourse" : "integer",
