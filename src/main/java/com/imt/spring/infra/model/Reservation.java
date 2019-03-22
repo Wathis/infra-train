@@ -13,16 +13,17 @@ import java.io.IOException;
 @Entity
 public class Reservation {
     @Id
+    @GeneratedValue
     public int id;
 
     @Column
-    public int timestamp;
+    public long timestamp;
 
     @ManyToOne
     public Sillon sillon;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Course course;
+    public Course course;
 
 //
 //    public static SimpleModule getSerializerModule(){

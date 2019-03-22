@@ -7,10 +7,11 @@ import java.util.List;
 public class Course {
 
     @Id
+    @GeneratedValue
     public int id;
 
     @Column
-    public int id_reservation_transporteur;
+    public String id_reservation_transporteur;
 
     @OneToMany(
             mappedBy = "course",

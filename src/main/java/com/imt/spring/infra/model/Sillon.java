@@ -1,14 +1,12 @@
 package com.imt.spring.infra.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Sillon {
 
     @Id
+    @GeneratedValue
     public int id;
 
     @Column

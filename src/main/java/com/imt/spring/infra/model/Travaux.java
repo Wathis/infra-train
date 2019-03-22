@@ -7,6 +7,7 @@ import java.util.List;
 public class Travaux {
 
     @Id
+    @GeneratedValue
     public int id;
 
     @Column
