@@ -2,7 +2,7 @@
 
 ## Réservation
 ### Requête
-*NOM TOPIC KAFKA* : creer_reservation
+**NOM TOPIC KAFKA** : creer_reservation
 ```json
 {
 	"idReservationInterneTransporteur" : "string",
@@ -13,7 +13,7 @@
 ```
 
 ### Réponse
-*NOM TOPIC KAFKA* : reponse_reservation
+**NOM TOPIC KAFKA** : reponse_reservation
 ```json
 {
 	"idCourse" : "integer",
