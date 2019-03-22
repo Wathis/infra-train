@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Reservation 
 
 ```
@@ -17,9 +17,6 @@ RESERVATION
 }
 ```
 
-<<<<<<< HEAD
-# Travaux 
-=======
 ### Réponse
 ```json
 {
@@ -55,4 +52,3 @@ RESERVATION
 	}
 ]
 ```
->>>>>>> d75beeb7d55302d40a1b14ad6a7af88dda20bdf1
