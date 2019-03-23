@@ -28,6 +28,7 @@
 
 ## Travaux (read only)
 ### Notification d'annulation de course
+**NOM TOPIC KAFKA** : reponse_annulation_course
 ```json
 {
 	"idCourse" : "integer",
@@ -38,6 +39,7 @@
 ```
 
 ### Lister les travaux en cours
+**NOM TOPIC KAFKA** : reponse_travaux
 ```json
 [
 	{
