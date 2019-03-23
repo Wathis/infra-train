@@ -2,6 +2,7 @@ package com.imt.spring.infra.controller.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.imt.spring.infra.controller.kafka.events.AnnulationCourseReponse;
 import com.imt.spring.infra.controller.kafka.events.ReservationAppel;
 import com.imt.spring.infra.controller.kafka.events.ReservationReponse;
 import com.imt.spring.infra.controller.kafka.events.TravauxReponse;
@@ -73,5 +74,15 @@ public class KafkaController {
     	List<TravauxReponse> listeTravaux = travauxService.obtenirTravauxReponse();
     	
     	this.template.send("reponse_travaux", gson.toJson(listeTravaux));
+    }
+    
+    public void envoiAnnulationCourse() {
+    	
+    	List<AnnulationCourseReponse> annulationCourseReponses = travauxService.obtenirAnnulationCourses();
+    	
+    	annulationCourseReponses.forEach(annulation ->{
+    		this.template.send("reponse_annulation_course", gson.toJson(annulation));
+    	});
+    	
     }
 }
