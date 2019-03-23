@@ -1,7 +1,5 @@
 package com.imt.spring.infra.repository;
 
-import com.imt.spring.infra.model.Reservation;
-import com.imt.spring.infra.model.Sillon;
 import com.imt.spring.infra.model.Travaux;
 
 import org.springframework.data.jpa.repository.Query;
@@ -11,5 +9,5 @@ import java.util.List;
 
 public interface TravauxRepository extends CrudRepository<Travaux, Integer> {
     @Query(value = "SELECT * FROM infra.travaux", nativeQuery = true)
-    List<Travaux> listeDesTravaux();
+    List<Travaux> getTravaux();
 }

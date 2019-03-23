@@ -4,9 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.imt.spring.infra.controller.kafka.events.ReservationAppel;
 import com.imt.spring.infra.controller.kafka.events.ReservationReponse;
+import com.imt.spring.infra.controller.kafka.events.TravauxReponse;
 import com.imt.spring.infra.model.Course;
 import com.imt.spring.infra.model.Reservation;
 import com.imt.spring.infra.service.ReservationService;
+import com.imt.spring.infra.service.TravauxService;
+
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +24,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +38,9 @@ public class KafkaController {
 
     @Autowired
     ReservationService reservationService;
+    
+    @Autowired
+    TravauxService travauxService;
 
     private Gson gson = new Gson();
 
@@ -58,5 +66,12 @@ public class KafkaController {
             reservationReponse.message = "Le trajet est déjà réservé";
         }
         this.template.send("reponse_reservation", gson.toJson(reservationReponse));
+    }
+    
+    public void envoiListeTravaux() {
+    	
+    	List<TravauxReponse> listeTravaux = travauxService.obtenirTravauxReponse();
+    	
+    	this.template.send("reponse_travaux", gson.toJson(listeTravaux));
     }
 }
