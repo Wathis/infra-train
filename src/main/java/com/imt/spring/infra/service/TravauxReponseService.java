@@ -1,18 +1,21 @@
 package com.imt.spring.infra.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.google.gson.Gson;
 import com.imt.spring.infra.controller.kafka.events.AnnulationCourseReponse;
 import com.imt.spring.infra.controller.kafka.events.TravauxReponse;
-import com.imt.spring.infra.model.Course;
-import com.imt.spring.infra.model.Travaux;
 import com.imt.spring.infra.repository.CourseRepository;
 import com.imt.spring.infra.repository.TravauxRepository;
 
-public class TravauxService {
+@Service
+@Transactional
+public class TravauxReponseService {
 	
 	final int VITESSE_TRAIN = 200;
     final int TAILLE_SILLON_KM = 10;
@@ -24,9 +27,13 @@ public class TravauxService {
 	@Autowired
 	CourseRepository courseRepository;
 	
+	Gson gson = new Gson();
+	
 	public List<TravauxReponse> obtenirTravauxReponse() {
 		
-		List<TravauxReponse> travauxReponses = travauxRepository.getTravauxReponse(DUREE_SILLON);
+		System.out.println(gson.toJson((TravauxReponse)(travauxRepository.getTravauxReponse(DUREE_SILLON).get(0))));
+		
+		List<TravauxReponse> travauxReponses = null;
 		
 		return travauxReponses;
 	}

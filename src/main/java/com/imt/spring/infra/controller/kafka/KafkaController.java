@@ -9,7 +9,7 @@ import com.imt.spring.infra.controller.kafka.events.TravauxReponse;
 import com.imt.spring.infra.model.Course;
 import com.imt.spring.infra.model.Reservation;
 import com.imt.spring.infra.service.ReservationService;
-import com.imt.spring.infra.service.TravauxService;
+import com.imt.spring.infra.service.TravauxReponseService;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
@@ -41,7 +41,7 @@ public class KafkaController {
     ReservationService reservationService;
     
     @Autowired
-    TravauxService travauxService;
+    TravauxReponseService travauxService;
 
     private Gson gson = new Gson();
 
@@ -72,6 +72,8 @@ public class KafkaController {
     public void envoiListeTravaux() {
     	
     	List<TravauxReponse> listeTravaux = travauxService.obtenirTravauxReponse();
+    	
+    	System.out.println(gson.toJson(listeTravaux));
     	
     	this.template.send("reponse_travaux", gson.toJson(listeTravaux));
     }

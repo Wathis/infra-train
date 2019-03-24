@@ -10,3 +10,5 @@ from
     inner join sillon on ligne.id = sillon.ligne_id
     inner join travaux_sillons on sillon.id = travaux_sillons.sillons_id
     inner join travaux on travaux.id = travaux_sillons.travaux_id
+group by
+	desserte1.nom, desserte2.nom, tempsDebut, tempsFin
