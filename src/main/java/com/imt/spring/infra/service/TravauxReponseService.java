@@ -46,7 +46,14 @@ public class TravauxReponseService {
 
 	public List<AnnulationCourseReponse> obtenirAnnulationCourses() {
 		
-		List<AnnulationCourseReponse> annulationCourseReponses = courseRepository.getCourseAnnulees(DUREE_SILLON);
+		List<AnnulationCourseReponse> annulationCourseReponses = courseRepository.getCourseAnnulees(DUREE_SILLON).stream().map(
+				annulationCourse -> new AnnulationCourseReponse(
+						annulationCourse.getIdCourse(),
+						annulationCourse.getIdReservationInterneTransporteur(),
+						annulationCourse.getTempsDebut(),
+						annulationCourse.getTempsFin()
+						)
+				).collect(Collectors.toList());
 		
 		annulationCourseReponses.forEach(annulationCourse -> {
 			courseRepository.deleteById(annulationCourse.idCourse);

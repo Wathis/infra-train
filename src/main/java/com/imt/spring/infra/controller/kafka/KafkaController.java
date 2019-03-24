@@ -83,6 +83,9 @@ public class KafkaController {
     	List<AnnulationCourseReponse> annulationCourseReponses = travauxService.obtenirAnnulationCourses();
     	
     	annulationCourseReponses.forEach(annulation ->{
+    		
+    		System.out.println(gson.toJson(annulation));
+    		
     		this.template.send("reponse_annulation_course", gson.toJson(annulation));
     	});
     	

@@ -18,4 +18,8 @@ public class Sillon {
     public Sillon(int id) {
         this.id = id;
     }
+    
+    public Sillon() {
+    	
+    }
 }

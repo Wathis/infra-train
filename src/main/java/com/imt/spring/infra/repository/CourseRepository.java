@@ -1,9 +1,6 @@
 package com.imt.spring.infra.repository;
 
-import com.imt.spring.infra.controller.kafka.events.AnnulationCourseReponse;
 import com.imt.spring.infra.model.Course;
-import com.imt.spring.infra.model.Sillon;
-import com.imt.spring.infra.model.Travaux;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -29,5 +26,5 @@ public interface CourseRepository extends CrudRepository<Course, Integer> {
 			"where\r\n" + 
 			"	reservation.timestamp > travaux.date_debut- ?1 *2\r\n" + 
 			"    and reservation.timestamp < travaux.date_fin+ ?1 *2", nativeQuery = true)
-	List<AnnulationCourseReponse> getCourseAnnulees(int dureeSillon);
+	List<IAnnulationCourseReponse> getCourseAnnulees(int dureeSillon);
 }
