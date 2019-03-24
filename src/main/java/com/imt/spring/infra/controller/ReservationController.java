@@ -32,4 +32,11 @@ public class ReservationController {
         this.template.send("creer_reservation", objJSON);
         return "200 OK";
     }
+    
+    @RequestMapping(value = "/annuler_reservation",method = RequestMethod.POST)
+    public String annulerReservation(@RequestBody ReservationAppel reservationDTO) {
+        String objJSON = gson.toJson(reservationDTO);
+        this.template.send("annuler_reservation", objJSON);
+        return "200 OK";
+    }
 }

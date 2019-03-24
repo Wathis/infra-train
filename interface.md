@@ -1,6 +1,6 @@
 # Interface sender-consumer
 
-## Réservation
+## Créer Réservation
 ### Requête
 **NOM TOPIC KAFKA** : creer_reservation
 ```json
@@ -14,6 +14,32 @@
 
 ### Réponse
 **NOM TOPIC KAFKA** : reponse_reservation
+```json
+{
+	"idCourse" : integer,
+	"idReservationInterneTransporteur" : "string",
+	"pointDepart" : "string [A-Z]",
+	"pointArrivee" : "string [A-Z]",
+	"tempsDepart" : long, //timestamp
+	"erreur" : boolean,
+	"message" : "string"
+}
+```
+
+## Annuler Réservation
+### Requête
+**NOM TOPIC KAFKA** : annuler_reservation
+```json
+{
+	"idReservationInterneTransporteur" : "string",
+	"pointDepart" : "string [A-Z]",
+	"pointArrivee" : "string [A-Z]",
+	"tempsDepart" : long //timestamp
+}
+```
+
+### Réponse
+**NOM TOPIC KAFKA** : reponse_annuler_reservation
 ```json
 {
 	"idCourse" : integer,

@@ -69,6 +69,32 @@ public class KafkaController {
         this.template.send("reponse_reservation", gson.toJson(reservationReponse));
     }
     
+    @KafkaListener(topics = "annuler_reservation")
+    public void listenAnnulerReservation(ConsumerRecord<?,?> cr) throws Exception{
+    	System.out.println(cr.value());
+    	
+    	ReservationAppel reservationAppel = gson.fromJson(cr.value().toString(), ReservationAppel.class);
+
+        Course course = reservationService.annulerReservation(reservationAppel);
+
+        ReservationReponse reservationReponse = new ReservationReponse();
+        
+        reservationReponse.idReservationInterneTransporteur = reservationAppel.idReservationInterneTransporteur;
+        reservationReponse.pointDepart = reservationAppel.pointDepart;
+        reservationReponse.pointArrivee = reservationAppel.pointArrivee;
+        reservationReponse.tempsDepart = reservationAppel.tempsDepart;
+        
+        if (course != null) {
+            reservationReponse.idCourse = course.id;
+            reservationReponse.erreur = false;
+            reservationReponse.message = "Succès de l'annulation";
+        } else {
+            reservationReponse.erreur = true;
+            reservationReponse.message = "Le trajet n'existe pas";
+        }
+        this.template.send("reponse_annuler_reservation", gson.toJson(reservationReponse));
+    }
+    
     public void envoiListeTravaux() {
     	
     	List<TravauxReponse> listeTravaux = travauxService.obtenirTravauxReponse();

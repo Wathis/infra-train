@@ -80,5 +80,20 @@ public class ReservationService {
         }
         return reserverSillons(sillonIds,reservationAppel.tempsDepart,reservationAppel);
     }
+    
+    public Course annulerReservation(ReservationAppel reservationAppel) {
+    	Iterable<Course> courses = courseRepository.findAll();
+    	
+    	Course courseRetournee = null;
+    	
+    	for(Course course : courses) {
+    		if(course.id_reservation_transporteur.equals(reservationAppel.idReservationInterneTransporteur)) {
+    			courseRetournee = course;
+    			courseRepository.delete(course);
+    		}
+    	}
+    	
+    	return courseRetournee;
+    }
 
 }
