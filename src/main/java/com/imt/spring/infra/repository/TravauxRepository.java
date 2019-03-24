@@ -24,5 +24,5 @@ public interface TravauxRepository extends CrudRepository<Travaux, Integer> {
     		"    inner join travaux on travaux.id = travaux_sillons.travaux_id\r\n" + 
     		"group by\r\n" + 
     		"	desserte1.nom, desserte2.nom, tempsDebut, tempsFin", nativeQuery = true)
-    List<TravauxReponse> getTravauxReponse(int dureeSillon);
+    List<ITravauxReponse> getTravauxReponse(int dureeSillon);
 }

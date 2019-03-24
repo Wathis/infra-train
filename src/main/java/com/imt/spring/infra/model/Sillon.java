@@ -15,4 +15,7 @@ public class Sillon {
     @OneToOne
     public Ligne ligne;
 
+    public Sillon(int id) {
+        this.id = id;
+    }
 }

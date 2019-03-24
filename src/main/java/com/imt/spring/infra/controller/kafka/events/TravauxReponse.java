@@ -11,11 +11,11 @@ public class TravauxReponse implements ITravauxReponse{
 	public long tempsDebut;
 	public long tempsFin;
 	
-	public TravauxReponse(HashMap<String, Object> values) {
-	    this.pointDepart = (String) values.get("pointDepart");
-	    this.pointArrivee = (String) values.get("pointArrivee");
-	    this.tempsDebut = (long) values.get("tempsDebut");
-	    this.tempsFin = (long) values.get("tempsFin");
+	public TravauxReponse(String pointDepart, String pointArrivee, long tempsDebut, long tempsFin) {
+	    this.pointDepart = pointDepart;
+	    this.pointArrivee = pointArrivee;
+	    this.tempsDebut = tempsDebut;
+	    this.tempsFin = tempsFin;
 	}
 	
 	

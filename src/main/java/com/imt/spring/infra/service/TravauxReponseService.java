@@ -1,9 +1,11 @@
 package com.imt.spring.infra.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
+import com.imt.spring.infra.repository.ITravauxReponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,11 +32,15 @@ public class TravauxReponseService {
 	Gson gson = new Gson();
 	
 	public List<TravauxReponse> obtenirTravauxReponse() {
-		
-		System.out.println(gson.toJson((TravauxReponse)(travauxRepository.getTravauxReponse(DUREE_SILLON).get(0))));
-		
-		List<TravauxReponse> travauxReponses = null;
-		
+		List<ITravauxReponse> sqlTravauxResponse = travauxRepository.getTravauxReponse(DUREE_SILLON);
+		List<TravauxReponse> travauxReponses = sqlTravauxResponse.stream()
+				.map(travaux -> new TravauxReponse(
+						travaux.getPointArrivee(),
+						travaux.getPointArrivee(),
+						travaux.getTempsDebut(),
+						travaux.getTempsFin()
+				))
+				.collect(Collectors.toList());
 		return travauxReponses;
 	}
 
